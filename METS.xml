@@ -4,11 +4,11 @@
     <fileGrp USE="image">
       
         <file ID="image1">
-          <FLocat xlink:href="Fierabras_Bagnyon_Jehan_btv1b8600180x_21.jpeg"/>
+          <FLocat xlink:href="fierbras3.png"/>
         </file>
       
         <file ID="image2">
-          <FLocat xlink:href="Fierabras_Bagnyon_Jehan_btv1b8600180x_22.jpeg"/>
+          <FLocat xlink:href="fierabras4.png"/>
         </file>
       
     </fileGrp>
@@ -16,11 +16,11 @@
     <fileGrp USE="export">
       
         <file ID="export1">
-          <FLocat xlink:href="Fierabras_Bagnyon_Jehan_btv1b8600180x_21.xml"/>
+          <FLocat xlink:href="fierbras3.xml"/>
         </file>
       
         <file ID="export2">
-          <FLocat xlink:href="Fierabras_Bagnyon_Jehan_btv1b8600180x_22.xml"/>
+          <FLocat xlink:href="fierabras4.xml"/>
         </file>
       
     </fileGrp>
