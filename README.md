@@ -1,0 +1,1 @@
+Nous rassemblons dans ce répertoire tous les documents référents au travail de l'équipe Fierabras pour la validation du cours "Bonnes pratiques du développement collaboratif : initiation à Git" (enseignant Jean-Victor Boby), pour le premier semestre du Master Humanités Numériques ENC-PSL 2022-2023.
