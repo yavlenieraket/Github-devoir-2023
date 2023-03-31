@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.loc.gov/standards/alto/ns-v4#"
+      xsi:schemaLocation="http://www.loc.gov/standards/alto/ns-v4# http://www.loc.gov/standards/alto/v4/alto-4-2.xsd">
+  <Description>
+    <MeasurementUnit>pixel</MeasurementUnit>
+    <sourceImageInformation>
+      <fileName>Fierabras_Bagnyon_Jehan_btv1b8600180x_21.jpeg</fileName>
+      
+    </sourceImageInformation>
+  </Description>
+  
+  <Tags>
+    <OtherTag ID="BT5434" LABEL="Decoration" DESCRIPTION="block type Decoration"/><OtherTag ID="BT5300" LABEL="Lettrine" DESCRIPTION="block type Lettrine"/><OtherTag ID="BT5281" LABEL="text" DESCRIPTION="block type text"/><OtherTag ID="BT4" LABEL="Illustration" DESCRIPTION="block type Illustration"/><OtherTag ID="BT3" LABEL="Commentary" DESCRIPTION="block type Commentary"/><OtherTag ID="BT2" LABEL="Main" DESCRIPTION="block type Main"/><OtherTag ID="BT1" LABEL="Title" DESCRIPTION="block type Title"/>
+    <OtherTag ID="LT1865" LABEL="Lettrine" DESCRIPTION="line type Lettrine"/><OtherTag ID="LT1" LABEL="Main" DESCRIPTION="line type Main"/><OtherTag ID="LT1759" LABEL="default" DESCRIPTION="line type default"/>
+  </Tags>
+  
+  <Layout>
+    <Page WIDTH="1024"
+          HEIGHT="1434"
+          PHYSICAL_IMG_NR="0"
+          ID="eSc_dummypage_">
+      <PrintSpace HPOS="0"
+                  VPOS="0"
+                  WIDTH="1024"
+                  HEIGHT="1434">
+        
+        <TextBlock HPOS="142"
+                   VPOS="68"
+                   WIDTH="271"
+                   HEIGHT="292"
+                   ID="eSc_textblock_615f0647"
+                   TAGREFS="BT5300">
+          <Shape><Polygon POINTS="142 74 144 358 413 360 394 68"/></Shape>
+          
+          
+          <TextLine ID="eSc_line_9c244f8e"
+                    TAGREFS="LT1865"
+                    BASELINE="171 243 179 243 205 243 247 239 300 243 393 242" 
+                    HPOS="156"
+                    VPOS="82"
+                    WIDTH="244"
+                    HEIGHT="280">
+            <Shape><Polygon POINTS="169 248 170 349 229 361 271 359 285 362 307 361 369 348 378 344 381 340 385 342 395 337 396 318 399 311 399 295 400 309 397 284 392 266 392 241 394 102 390 133 388 122 376 112 379 125 382 119 374 116 372 111 362 106 344 96 320 87 294 82 260 84 241 95 240 86 156 127 169 242"/></Shape>
+	    <String CONTENT="S"
+                    HPOS="156"
+                    VPOS="82"
+                    WIDTH="244"
+                    HEIGHT="280"></String>
+          </TextLine>
+
+          
+        </TextBlock>
+        
+        <TextBlock HPOS="150"
+                   VPOS="108"
+                   WIDTH="657"
+                   HEIGHT="984"
+                   ID="eSc_textblock_ce0581bc"
+                   TAGREFS="BT5281">
+          <Shape><Polygon POINTS="397 108 807 121 800 932 794 1082 784 1092 181 1092 156 1079 156 627 159 615 155 601 159 436 152 442 154 444 152 447 155 448 155 451 154 452 155 438 162 439 153 435 150 429 156 389 169 355 173 356 175 355 177 343 177 354 183 352 188 356 195 356 185 348 211 352 238 361 257 361 346 362 362 359 372 358 385 355 408 350 405 304 411 274 410 252 406 220 405 177 404 140"/></Shape>
+          
+        </TextBlock>
+        
+        <TextBlock HPOS="27"
+                   VPOS="253"
+                   WIDTH="118"
+                   HEIGHT="446"
+                   ID="eSc_textblock_88b22762"
+                   TAGREFS="BT5434">
+          <Shape><Polygon POINTS="27 253 27 699 145 699 145 253"/></Shape>
+          
+        </TextBlock>
+        
+
+        
+      </PrintSpace>
+    </Page>
+  </Layout>
+</alto>
