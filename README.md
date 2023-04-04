@@ -1,2 +1,2 @@
 # Github-devoir-2023
- Pour le nom du projet HN-2022-{Fierabras_incunable}
+Contribuition du membre @gFreijedo pour le travail HN-2022-{Fierabras_incunable}.
