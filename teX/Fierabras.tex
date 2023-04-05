@@ -1,0 +1,178 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\graphicspath{ {images/} }
+
+
+\usepackage{fontspec}
+\usepackage[french]{babel}
+
+\newcommand{\vizL}{{\setmainfont{Linux Libertine O}\symbol{"204A}}}
+
+
+
+\usepackage{array}
+\usepackage{cellspace}
+\usepackage{booktabs}
+   
+
+\usepackage{minted}
+
+\usepackage{hyperref}
+\usepackage[shortlabels]{enumitem}
+\usepackage{listings}
+
+%\usepackage{epigraph}
+%\setlength\epigraphwidth{.6\textwidth}
+%\setlength\epigraphrule{1pt}
+
+
+
+\title{\emph{Le roman Fierabas} -- rapport du travail}
+\author{Carolina Macedo \emph{alias} carolisteia, \\ 
+Ekaterina Iakovleva \emph{alias} yavlenieraket, \\
+Gonzalo Freijedo \emph{alias} gFreijedo}
+\date{Mars 2023}
+
+\usepackage[backend=biber, style=apa, sorting=nty]{biblatex}
+
+\usepackage{csquotes}
+
+\addbibresource{GIT.bib}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Ce travail, comme le récit de l’incunable sur lequel nous travaillons, se divise en trois parties : la première partie correspond à la phase technique et notre outil de travail est le logiciel \href{https://traces6.paris.inria.fr/}{\textit{eScriptorium}} ; la deuxième partie consiste dans un travail de recherche et de réflexion sur nos données et nos résultats ; finalement, pour la dernière partie nous avons déposé notre contenu sur la plateforme \href{https://github.com/yavlenieraket/HN-2022--Fierabras_incunable-} {GitHub}.
+
+\subsection{Plan du travail}
+
+Afin de transcrire nos documents, nous avons utilisé le logiciel \emph{eScriptorium}. Chaque membre du groupe avait deux pages à transcrire, soit un total de 6 pages (\emph{folios} 18 à 23). Après avoir téléchargé et sauvegardé les pages correspondantes à nos folios, nous avons créé un nouveau projet sur \emph{eScriptorium}. Ensuite, nous avons emporté les images en format .jpg (nous n’avons pas réussi à télécharger les images dans le format iiif). Nous avons sélectionné les images à travailler, puis nous avons procédé à la segmentation du texte et création de régions de texte et des images. Dans l'étape suivante nous avons procédé à la transcription des images, ligne par ligne. Une fois réalisée la transcription, nous avons exporté nos données en tant que fichiers ALTO.
+
+Finalement, nous avons déposé chacun de nos travaux sur GitHub. Nous avons travaillé initialement -- soit localement, soit  à distance -- chacun sur une branche distincte (une branche par chaque membre de l'équipe) et ensuite avons \emph{mergé} sur la branche principale tout ce contenu. Ce rapport a été réalisé sur l'éditeur collaboratif \LaTeX   
+ \href{https://www.overleaf.com/} \, {Overleaf}. 
+
+
+\section{L’ HTR appliquée aux textes en français au XV\textsuperscript{e} siècle}
+
+Le principe de travail HTR  (handwritten text recognition) peut être divisé en plusieurs étapes qui sont également liées à l'utilisation d'algorithmes d'apprentissage automatique formés sur de grands ensembles de données d'échantillons d'écriture manuscrite : la première étape est la capture et la numérisation de l'image, la deuxième étape est l'analyse des images pour reconnaître d'abord l'individu les caractères et les mots (dans cette étape, HTR utilise un apprentissage automatique complexe, également pour les mots, il est utilisé le modèle de langue que l'utilisateur peut choisir, pour notre tâche, nous utilisons le modèle de langue latine), la troisième étape est l'utilisation du modèle de langue qui est connecté avec compréhension du sens des mots, puis montrer la sortie. 
+
+
+\subsection{Les outils}
+La plateforme \emph{eScriptorium}, utilisée dans ce travail, est un logiciel \emph{open source} développé par des chercheurs de l’EPHE et de l’INRIA, qui permet l'analyse de documents images par la technologie de reconnaissance de l'écriture manuscrite (HTR), la reconnaissance optique de caractères (OCR - \emph{Optical character recognition}), ainsi que des algorithmes d'apprentissage automatique \footnote{\emph{eScriptorium} s’en sert du moteur d’HTR \emph{open source}, Kraken, développé par Benjamin Kiessling dans le cadre du projet \emph{Scripta} (PSL).}. Grâce à ces technologies, les images qui sont données en \emph{input} pour l’analyse seront décodées automatiquement. Comme rappelé par Peter Stokes (\emph{apud} \cite{gautier_compte-rendu_nodate}), \emph{eScriptorium} permet d’effectuer plusieurs types de projets, tels que la transcription manuelle automatique, des transcriptions automatiques corrigées pour de l’édition, l’alignement des transcriptions existantes avec des photos de leur objet, des transcriptions imparfaites pour de l’analyse de données massives.
+
+\subsection{Les projets}
+Concernant des projets qui se consacrent 'a l'HTR dans le domaine des textes français au XV\textsuperscript{e} siècle, il faut mentionner 
+le dépôt GitHub  \href{https://github.com/ HTR-Uni/cremma-médiéval} {Cremma-medieval} qui a été créé afin de mettre à disposition des \emph{corpora} de transcription pour l'entraînement des modèles HTR pour les manuscrits médiévaux du XII\textsuperscript{e} au XV\textsuperscript{e} siècle. Le jeu de données CREMMA Medieval a été construit avec \emph{eScriptorium} et Kraken.
+
+
+
+Les recherches menées par Thibault Clérice, notamment  (\cite{clerice_ground-truth_2022}), sont un exemple de ce qui se fait de plus récent dans le domaine. Dans cet article, l’auteur propose une nouvelle méthode basée sur le \emph{deep learning} où il est possible de catégoriser chaque taux d'erreur de ligne en plages d'erreur pour résoudre les difficultés dans le contexte de la variation orthographique pour l'ancien français et le latin.
+
+Soulignons également l'article sur la transcription de manuscrits médiévaux pour l'apprentissage automatique par Estelle Guéville (\cite{gueville_transcribing_2023}). C'est une observation méthodologique très importante de la transcription des manuscrits médiévaux par traitement automatique. Les auteurs soutiennent que pour poursuivre de nouveaux types d'installations d'analyse par la recherche informatique avancée, nous devons théoriser les modes de transcription, non seulement pour la lecture humaine, mais aussi pour le traitement par machine et cela peut être une nouvelle étape de l'histoire du processus de transcription des manuscrits médiévaux. en utilisant HTR.
+
+De plus en plus émergent des articles sur la technique de la  reconnaissance optique de caractères (OCR), notamment du moteur Kraken. \cite{schoen_optical_2022} en est un exemple. Les auteurs sont parvenus à entraîner le modèle sur l'écriture manuscrite anglaise d'un scribe du XV\textsuperscript{e} siècle avec un taux de  précision de 97 \%.
+
+
+\section{Présentation et description des données sources}
+
+    Le document qui sert de base à notre travail fut le premier roman médiéval imprimé (\cite{lambert_notice_2017}) : il s’agit de \emph{Le roman Fierabas}, ou simplement \emph{Fierabas}, du vaudois Jean Bagnyon. Il a été mis en prose d'après la chanson de geste \emph{Li rommans de Fierabras d'Alixandre}, écrite au XII\textsuperscript{e} siècle, dont plusieurs manuscrits en diverses langues subsistent aujourd’hui \footnote{Voir une descriptions de certains disponibles en \url{https://www.arlima.net/eh/fierabras.html}}. Pour ce travail, nous nous occuperons de l’\emph{editio princeps}, publiée en 1478 par Adam Steinschaber, premier imprimeur à Genève.  
+    
+     Il existe actuellement six copies de cet incunable distribuées par plusieurs bibliothèques\footnote{Ces copies sont distribuées en Bruxelles, à la Bibliothèque Royale (B 1363 Rés) ; en Suisse, à la Bibliothèque de Genève (Hf 350 Rés) ; quatre copies en France : Bibliothèque et archives du château de Chantilly (IV-G-037), Bibliothèque de l’Arsenal (RES FOL-B-932) et Bibliothèque Nationale de France (RES Y2- 76 et RES Y2- 20).}, y compris deux digitalisées\footnote{Une copie disponible à la Bibliothèque Nationale de France, et sur laquelle nous nous appuyons pour rédiger ce travail (consultable sur la page \url{https://gallica.bnf.fr/ark:/12148/btv1b8600180x/f9.item}) et l’autre à la Bibliothèque de Genève (\url{https://www.e-rara.ch/gep_g/doi/10.3931/e-rara-33196}).}.
+     
+     En France, ce roman a été imprimé pour la première fois en 1485, à Lyon, par Guillaume le Roy et ce n’est qu’à partir de 1520 qu’il sera imprimée à Paris, par Michel Le Noir, sous le titre \emph{La conqueste du grant roy Charlemaigne des Espaignes. Et les vaillances des douze pers de France. Et aussi celles du vaillant Fierabras}.
+     
+    Le roman est écrit en français moyen, marqué originellement par une \emph{scripta} régionale romande, puis standardisée au fil des éditions (\cite{lambert_notice_2017}). Cette première édition dans un format \emph{in-folio} possède 115 \emph{folios} de 30/31 lignes chacun, rédigés dans un caractère gothique (G120 de Steinschaber\footnote{ \url{https://tw.staatsbibliothek-berlin.de/ma05151}}) et avec l’ajout des initiales à la main, comme l’on peut lire sur la notice bibliographique de la BNF\footnote{\url{https://catalogue.bnf.fr/ark:/12148/cb33392022z}}.
+    
+	Écrite entre 1465 et 1470 à la demande du chanoine de Lausanne, Henri Bolomier, l’oeuvre se divise en trois parties, dont les récits de l'histoire des rois de France jusqu'à Clovis et, puis, du règne de Charlemagne, puisent dans le \emph{Speculum historiale} de Vincent de Beauveais, d'après Brun (\cite{brun_2020}).
+\section{\emph{Fierabras} sur \emph{eScriptorium}}
+ \subsection{Segmentation}
+
+
+Le premier stade de traitement de notre image consiste en effectuer sa segmentation.
+Nous avons utilisé soit la segmentation manuelle soit la fonctionnalité de segmentation automatique proposée par le logiciel. Le taux d'exactitude pour les pages de texte simple est excellent. Pour les pages avec des ornements, nous avons effectué la segmentation manuellement.
+
+\begin{center}
+\includegraphics{lignes.png}    
+\end{center}
+
+
+En ce qui concerne l'ontologie, nous avons utilisé l'ontologie par défaut du logiciel, en ajoutant seulement deux balises pour définir les régions « Lettrine »  et « Décoration » pour les zones que nous illustrons ci-dessous :
+
+ \begin{center}
+\begin{tabular}{ |m{3cm}|m{2.5cm}| } 
+ \hline
+ \includegraphics{S.png} & Lettrine \\
+ \hline
+ \includegraphics{deco.png} \includegraphics{deco2.png} & Décoration \\ 
+  \hline
+
+\end{tabular}
+\end{center}   
+
+Le document est ainsi divisé en trois régions : en violet, les lettrines ; en bleu, les décorations ; et en rouge, tout le texte :
+
+\begin{center}
+\includegraphics{regions.png}
+
+
+    
+\end{center}
+
+
+
+
+\subsection{Transcription}
+
+
+D'un point de vue paléographique notre texte est très facilement lisible et nous n'avons pas eu des difficultés majeures lors de l'exercice de transcription.
+
+ Étant donné que, d'un côté, « transcrire, c’est décrire un texte et sa mise en forme graphique » (\cite{stutzmann_paleographie_2011}) et que, d'autre côté, l'objectif de la plateforme \textit{eScriptorium} ( et des travaux qui y sont menés) est l'entraînement de modèles HTR/OCR, nous avons décidé de faire une transcription aussi proche que possible du document original. Pour ce faire, nous n'avons pas procédé à la normalisation de l'orthographie ni à la résolution des abréviations\footnote{« La résolution des abréviations étant un acte interprétatif lié à
+la spécificité de chacun des documents, elle relève d’un autre geste que celui de la prédiction
+textuelle »(\cite{pinche_guide_2022}).}, en respectant, dans la mesure du possible, les caractères spéciaux. Cependant, dans certains cas, nous avons dû faire des choix pour des caractères qui ne sont pas exactement les mêmes qui ceux représentés dans l'image à transcrire, et ce malgré l'incorporation du clavier Cremmalab\footnote{\url{https://github.com/HTR-United/cremma-medieval/blob/main/CremmaLab.json}}. Nous avons utilisé le modèle GalliCorpora+ (French Early Modern Print) en choisissant la \emph{scripta} Latin et nous avons obtenu un taux d'exactitude de 96.6\%. La plupart de problèmes de reconnaissance sont presque tous de caractère paléographique, dans le sens qu'ils avaient lieu lors que deux lettres se ressemblaient graphiquement, comme le \emph{f} et le \emph{ſ}(s long), le \emph{r} et le \emph{t}, ou encore le \emph{e} et le \emph{c}, par exemple.
+
+Voici quelques exemples de décisions de transcription :
+
+
+ \begin{center}
+\begin{tabular}{ |m{2.5cm}|m{1cm}| }
+
+ \hline
+ \includegraphics{&.png} & \vizL ⁊ \\
+ \hline
+ \includegraphics{nre.png} &nr$\tilde{e}$\\
+ \hline
+ \includegraphics{clo=.png} & clo= \\ 
+  \hline
+ \includegraphics{ve.png} & v\textsuperscript{e}. \\ 
+  \hline
+ \includegraphics{xxxin.png} & .xxxiń. \\ 
+ \hline
+ 
+\end{tabular}
+
+\end{center}
+
+
+
+
+\section{En guise de conclusion : difficultés}
+Un certain nombre de difficultés que nous avons rencontrées étaient en partie liées au fonctionnement et la manipulation de l'interface d'\emph{eScriptorium} elle-même. Par exemple, il y avait un problème d'ajout manuel de lignes dans un document. Les lignes s'ajoutaient de manière spontanée, puis il était difficile de les supprimer. La délimitation et transcription des lettrines aussi n'a pas été facile. De l'exportation de notre travail en fichiers ALTO - XML ont résulté quelques anomalies liées au fait que la transcription était modifiée lors de la conversion.
+
+Concernant la partie Git, certains d'entre nous ont travaillé depuis un dépôt local et parfois il y a eu des conflits entre les versions des différentes branches locales et en distance ; d'autres petits problèmes par rapport aux contenus entre local et gitHub, n'ont pas été toujours faciles  à résoudre. 
+
+\nocite{pinche_guide_2022}
+\nocite{mandach_geste_2014}
+\nocite{lokkos_catalogue_1978}
+\nocite{vielliard_conseils_2014}
+\nocite{lambert_notice_2017}
+\nocite{stutzmann_paleographie_2011}
+\nocite{brun_2020}
+\nocite{gautier_compte-rendu_nodate}
+
+\newpage
+\printbibliography[title=Bibliographie]
+
+\end{document}
